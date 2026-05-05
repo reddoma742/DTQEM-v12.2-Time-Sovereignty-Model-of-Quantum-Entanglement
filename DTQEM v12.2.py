@@ -1,3 +1,7 @@
+# Project: DTQEM v12.2 - Time-Sovereignty Model
+# Author: Redouane Berramdane
+# DOI: 10.5281/zenodo.20043754
+# GitHub: https://github.com/reddoma742/DTQEM-v12.2
 # -*- coding: utf-8 -*-
 """
 DTQEM v12.2 – Final Gold Release (fully corrected)
