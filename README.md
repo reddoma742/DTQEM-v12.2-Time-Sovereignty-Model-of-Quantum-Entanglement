@@ -1,6 +1,6 @@
 
 markdown
-![Berramdane Model Result](images/DTQEM v12.2.jpg)
+![Berramdane Model Result](images/DTQEM_v12.2.jpg)
 
 
 # DTQEM-v12.2-Time-Sovereignty-Model-of-Quantum-Entanglement
