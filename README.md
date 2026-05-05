@@ -1,3 +1,8 @@
+
+markdown
+![Berramdane Model Result](images/DTQEM v12.2.jpg)
+
+
 # DTQEM-v12.2-Time-Sovereignty-Model-of-Quantum-Entanglement
 DTQEM v12.2 is an open‑source, exact simulator of two‑qubit entanglement under thermal decoherence and magnetic fields. It introduces the Time‑Sovereignty interpretation: entanglement occurs when the particle’s clock dominates; measurement forces camera‑clock dominance. Includes inverse calibration, unique prediction V=D at θ=90°, and full GUI.
 # DTQEM v12.2 – Time‑Sovereignty Model of Quantum Entanglement
