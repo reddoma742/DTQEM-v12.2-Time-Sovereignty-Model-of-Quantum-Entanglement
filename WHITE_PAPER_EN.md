@@ -1,7 +1,7 @@
 # White Paper – DTQEM v12.2: Time‑Sovereignty Model of Quantum Entanglement
 
 **Version:** 1.0  
-**DOI:** [10.5281/zenodo.20039345](https://doi.org/10.5281/zenodo.20039345)  
+https://zenodo.org/badge/DOI/10.5281/zenodo.20043754.svg)](https://doi.org/10.5281/zenodo.20043754)
 **Authors:** Redouane Berramdane (concept, supervision), DeepSeek (numerics, code), Gemini & Claude (critical review)  
 
 ---
