@@ -1,9 +1,13 @@
 # ورقة بيضاء – DTQEM v12.2: نموذج سيادة الزمن للتشابك الكمومي
 
 **الإصدار:** 1.0  
-To cite this model, please use DOI: 10.5281/zenodo.20043754
+# DTQEM v12.2: Time-Sovereignty Model of Quantum Entanglement
 
-**DOI:** [10.5281/zenodo.20039345](https://doi.org/10.5281/zenodo.20039345)  
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20043754.svg)](https://doi.org/10.5281/zenodo.20043754)
+**Official DOI:** [10.5281/zenodo.20043754](https://doi.org/10.5281/zenodo.20043754)
+
+
+  
 **المؤلفون:** رضوان برمدان (المفهوم والإشراف)، DeepSeek (البرمجة والحسابات)، Gemini و Claude (المراجعة النقدية)
 
 ---
