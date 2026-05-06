@@ -1,0 +1,32 @@
+{
+    "title": "DTQEM v12.2: Time‑Sovereignty Model of Quantum Entanglement",
+    "creators": [
+        {
+            "name": "Berramdane, Redouane",
+            "affiliation": "Independent Researcher"
+        },
+        {
+            "name": "DeepSeek (AI Assistant)",
+            "type": "Other"
+        },
+        {
+            "name": "Gemini (AI Assistant)",
+            "type": "Other"
+        },
+        {
+            "name": "Claude (AI Assistant)",
+            "type": "Other"
+        }
+    ],
+    "description": "<p>DTQEM v12.2 is an open‑source, numerically exact simulation of two‑qubit entanglement under thermal decoherence and magnetic fields. It solves the Lindblad master equation via Liouvillian exponentiation, offers all standard entanglement metrics, inverse calibration, and a unique Time‑Sovereignty interpretation. Benchmarks pass with machine precision.</p>",
+    "license": "MIT",
+    "keywords": [
+        "quantum entanglement",
+        "open quantum systems",
+        "Lindblad equation",
+        "decoherence",
+        "quantum simulation"
+    ],
+    "access_right": "open",
+    "upload_type": "software",
+    "language": "eng"
