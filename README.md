@@ -1,58 +1,56 @@
+# DTQEM v12.2: Time‑Sovereignty Model of Quantum Entanglement
 
-# DTQEM v12.2: Time-Sovereignty Model of Quantum Entanglement
+**DOI:** [10.5281/zenodo.20043754](https://doi.org/10.5281/zenodo.20043754)  
+**License:** MIT  
+**Author:** Redouane Berramdane (with assistance from DeepSeek, Gemini, Claude)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20043754.svg)](https://doi.org/10.5281/zenodo.20043754)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-
-markdown
 ![Berramdane Model Result](images/DTQEM_v12.2.jpg)
 
+## 🌟 Overview
 
-# DTQEM-v12.2-Time-Sovereignty-Model-of-Quantum-Entanglement
-DTQEM v12.2 is an open‑source, exact simulator of two‑qubit entanglement under thermal decoherence and magnetic fields. It introduces the Time‑Sovereignty interpretation: entanglement occurs when the particle’s clock dominates; measurement forces camera‑clock dominance. Includes inverse calibration, unique prediction V=D at θ=90°, and full GUI.
-# DTQEM v12.2 – Time‑Sovereignty Model of Quantum Entanglement
+**DTQEM v12.2** (Dual‑Time Quantum Entanglement Model) is a numerically exact, open‑source simulator of two‑qubit entanglement under realistic thermal decoherence and magnetic fields. 
 
-**DOI: 10.5281/zenodo.20039345**  
-**License: MIT**
+It introduces the **Time‑Sovereignty** interpretation: entanglement occurs when the particle’s internal clock dominates the interaction; measurement forces the external “camera‑clock” to impose its own temporal frame, leading to collapse of the quantum coherence.
 
-## Overview
+## 🚀 Key Features
 
-DTQEM v12.2 is a numerically exact, open‑source simulator of two‑qubit entanglement under realistic thermal decoherence and magnetic fields. It solves the Lindblad master equation via Liouvillian superoperator exponentiation (machine‑precision benchmarks). The novel **Time‑Sovereignty** interpretation rephrases measurement as a competition between the particle’s clock and the camera’s clock – the dominant clock determines entanglement or collapse.
+- **Exact Lindblad dynamics:** Solves the master equation via Liouvillian superoperator exponentiation with machine‑precision benchmarks (dephasing error < 1e‑12, relaxation error < 1e‑12, entropy increase verified).
+- **Comprehensive metrics:** Tracks visibility \(V\), distinguishability \(D\), concurrence \(C\), negativity \(N\), purity \(\text{Pur}\), von Neumann entropy \(S\), and fidelity to the Bell state.
+- **Inverse calibration engine:** Automatically estimates \(\gamma_{\phi0}\), \(T\), or \(\theta\) required to reach a target visibility (e.g., from experimental data).
+- **Interactive GUI:** Fully functional dashboard using `ipywidgets` – works on desktops and mobile devices.
+- **Time‑Sovereignty mapping:** Visualises the transition between particle‑time and camera‑time dominance (\(S_p\) vs \(S_c\) as functions of temperature).
 
-## Key features
+## 🔬 Scientific foundation and symmetry
 
-- Exact Lindblad dynamics (expm(L·t))
-- All standard entanglement/coherence metrics (V, D, C, N, Pur, S, F_Bell, l1)
-- Inverse calibration: from target visibility to γφ₀, T, or θ
-- Unique testable prediction: at θ=90°, V = D for any temperature
-- Interactive ipywidgets GUI (works on desktop and mobile)
-- Time Sovereignty Map (S_p, S_c, t_eff vs T)
-- Automated validation + PDF export with DOI footer
+The model strictly obeys Bohr’s complementarity principle:
 
-## Installation & quick start
+\[
+V^{2} + D^{2} \le 1.
+\]
+
+For the special orientation \(\theta = 90^\circ\) and under fine‑tuned conditions (pure dephasing, zero magnetic field, \(t_{\text{obs}}\) chosen so that \(\alpha K_{\text{eff}} = 0.5\)), the values of \(V\) and \(D\) can become **numerically close** to each other and to \(1/\sqrt{2}\). However, **exact equality is not enforced** by the Lindblad dynamics. The model does **not** claim a universal prediction of \(V = D\); the occasional near‑equality is an interesting numerical feature, not a theoretical postulate.
+
+## ⚙️ Numerical stability and diagnostics
+
+The simulator includes built‑in diagnostic tools that guarantee:
+
+- Trace preservation (\(\operatorname{Tr}\rho = 1\))
+- Hermiticity and positivity of the density matrix
+- Complementarity \((V^{2}+D^{2}\le 1)\) automatically enforced
+
+### Benchmarks
+
+| Test Category | Status | Precision |
+| :--- | :---: | :--- |
+| **Pure dephasing (Bell state)** | ✅ Passed | \(< 8.33\times10^{-16}\) |
+| **Relaxation at \(T=0\)** | ✅ Passed | \(< 7.77\times10^{-16}\) |
+| **Entropy increase (second law)** | ✅ Passed | True |
+| **Complementarity** | ✅ Always satisfied | \(V^{2}+D^{2}\le 1\) |
+
+## 🛠 Installation & Quick Start
 
 ```bash
 git clone https://github.com/reddoma742/DTQEM-v12.2.git
 cd DTQEM-v12.2
 pip install -r requirements.txt
 python dtqem_v12_2.py
-
-## 💊 The "Cure": Self-Healing & Precision Calibration
-
-Unlike standard simulations that drift under thermal noise, **DTQEM v12.2** includes a built-in "Medicine" for quantum data—a self-correcting calibration engine that ensures physical reality is preserved.
-
-### How it Works:
-The core engine features an **Inverse Calibration Algorithm** that:
-1. **Scans for Noise:** Constant monitoring of the thermal occupancy ($n_{th}$) and dephasing rates ($\gamma_\phi$).
-2. **Injects Correction:** Automatically adjusts the effective time ($t_{eff}$) to counteract environmental decoherence.
-3. **Preserves Symmetry:** Maintains the Complementarity Principle ($V^2 + D^2 \approx 1$) with machine-level precision (error < $10^{-15}$).
-
-### Benchmarks (Machine Precision):
-| Test Category | Status | Precision |
-| :--- | :---: | :--- |
-| **Dephasing Error** | ✅ Passed | $< 1 \times 10^{-16}$ |
-| **Relaxation Stability** | ✅ Passed | $< 1 \times 10^{-15}$ |
-| **Unitary Preservation** | ✅ Passed | Guaranteed |
-
-> "This isn't just a simulation; it's a self-correcting quantum laboratory that protects the 'Time Sovereignty' of the particle from external interference."
