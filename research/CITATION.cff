@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use DTQEM in your research, please cite it as:"
+title: "DTQEM v12.2: Time‑Sovereignty Model of Quantum Entanglement"
+authors:
+  - family-names: "Berramdane"
+    given-names: "Reddouane"
+  - name: "DeepSeek (AI Assistant)"
+  - name: "Gemini (AI Assistant)"
+  - name: "Claude (AI Assistant)"
+version: "12.2.0"
+doi: "10.5281/zenodo.20043754"
+date-released: 2025-05-06
+url: "https://github.com/reddoma742/DTQEM-v12.2"
+license: "MIT"
+keywords:
+  - quantum entanglement
+  - open quantum systems
+  - Lindblad master equation
+  - decoherence
+  - quantum simulation
+abstract: "DTQEM v12.2 is an open‑source, numerically exact simulation of two‑qubit entanglement under thermal decoherence and magnetic fields, introducing the Time‑Sovereignty interpretation and passing all benchmarks."
