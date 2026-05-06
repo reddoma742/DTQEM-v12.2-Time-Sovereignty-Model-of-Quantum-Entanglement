@@ -1,12 +1,6 @@
-
----
-
-## 4. ملف `LICENSE` (MIT – نفسه كما في السابق)
-
-```text
 MIT License
 
-Copyright (c) 2025 Redouane Berramdane
+Copyright (c) 2025-2026 Redouane Berramdane
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
