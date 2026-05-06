@@ -141,6 +141,37 @@ Built with `ipywidgets`, the interface provides:
 
 DTQEM v12.2 is a **numerically exact, open‑source** simulation of two‑qubit entanglement that combines rigorous Lindblad dynamics with an intuitive **Time‑Sovereignty** interpretation. It passes all physical benchmarks, makes a unique testable prediction, and comes with a complete GUI. The model is ready for use in education, research, and as a foundation for extensions (non‑Markovian noise, gravity, multi‑qubits).
 
+## 9. Open Issues and Future Work
+
+While DTQEM v12.2 successfully passes all numerical benchmarks and offers a robust simulation platform, two theoretical aspects remain open and require further investigation. We state them here transparently to guide future development.
+
+### 9.1 Time‑Sovereignty Interpretation – The Definition of `t_cam`
+
+In the current interpretive layer (Section 3), we defined an effective camera time `t_cam = α K_eff t_real` so that `t_eff = t_real - t_cam`. However, for the standard calibration (`γφ₀ = 1000`, `γrel₀ = 300`, `t_obs = 1 μs`), the product `α K_eff` always remains below 0.5 for all temperatures. Consequently the particle sovereignty `S_p = α K_eff` never exceeds the camera sovereignty `S_c = 0.5`, and the particle is always predicted to dominate. This makes the “transition” unobservable under those parameters.
+
+**What is needed:** A physically motivated redefinition of `t_cam` that does not simply rescale the existing expression. One promising direction is to link `t_cam` directly to the **synchronisation rate** `R_sync = 1 - K_eff` using a non‑linear (e.g., logistic) saturation function, so that a true transition occurs when `K_eff` drops below a threshold. This will be a central goal of **DTQEM v13**.
+
+### 9.2 Unique Prediction `V = D` at θ = 90°
+
+The model predicts that for `θ = 90°` and arbitrary temperature, visibility `V` should equal distinguishability `D`. While this holds perfectly when only pure dephasing is present (`γrel₀ = 0`), numerical tests with the full Lindblad dynamics (dephasing + relaxation + excitation) show small deviations, especially at higher temperatures and with the magnetic field switched on.
+
+**Possible reasons:**  
+- The symmetry that leads to `V = D` is broken by the `γ↓` and `γ↑` jump operators.  
+- The prediction may require a specific additional condition (e.g., `γrel₀ = 0` or zero magnetic field).  
+
+**Future work:** A rigorous analytical derivation of the condition for `V = D` will be performed, and the numerical range where the equality holds will be mapped. This will be documented in version v13.
+
+### 9.3 Planned extensions for v13
+
+- Redefinition of `t_cam` to produce a genuine time‑sovereignty transition.
+- Derivation and numerical verification of the exact condition for `V = D`.
+- Implementation of non‑Markovian noise (Ornstein‑Uhlenbeck process) as an optional extension.
+- Optional support for three‑qubit systems (basic W and GHZ states) as a prototype for multi‑partite entanglement.
+
+---
+
+**Despite these open points, DTQEM v12.2 remains a fully functional, numerically exact simulator of two‑qubit entanglement. The code, documentation, and DOI are ready for use in education and research.**
+
 ---
 
 ## 8. References
