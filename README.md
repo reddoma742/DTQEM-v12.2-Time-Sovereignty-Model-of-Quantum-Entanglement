@@ -4,53 +4,53 @@
 **License:** MIT  
 **Author:** Redouane Berramdane (with assistance from DeepSeek, Gemini, Claude)
 
+---
+
 ![Berramdane Model Result](images/DTQEM_v12.2.jpg)
 
 ## 🌟 Overview
 
-**DTQEM v12.2** (Dual‑Time Quantum Entanglement Model) is a numerically exact, open‑source simulator of two‑qubit entanglement under realistic thermal decoherence and magnetic fields. 
+**DTQEM v12.2** (Dual-Time Quantum Entanglement Model) is a numerically exact, open-source simulator of two-qubit entanglement under realistic thermal decoherence and magnetic fields. 
 
-It introduces the **Time‑Sovereignty** interpretation: entanglement occurs when the particle’s internal clock dominates the interaction; measurement forces the external “camera‑clock” to impose its own temporal frame, leading to collapse of the quantum coherence.
+The model introduces the **Time‑Sovereignty** interpretation: entanglement represents a regime where the particle’s internal temporal frame dominates. Measurement and decoherence are viewed as the transition where the external "camera-clock" (the observer/environment) imposes its own frame, leading to the emergence of classical behavior.
 
 ## 🚀 Key Features
 
-- **Exact Lindblad dynamics:** Solves the master equation via Liouvillian superoperator exponentiation with machine‑precision benchmarks (dephasing error < 1e‑12, relaxation error < 1e‑12, entropy increase verified).
-- **Comprehensive metrics:** Tracks visibility \(V\), distinguishability \(D\), concurrence \(C\), negativity \(N\), purity \(\text{Pur}\), von Neumann entropy \(S\), and fidelity to the Bell state.
-- **Inverse calibration engine:** Automatically estimates \(\gamma_{\phi0}\), \(T\), or \(\theta\) required to reach a target visibility (e.g., from experimental data).
-- **Interactive GUI:** Fully functional dashboard using `ipywidgets` – works on desktops and mobile devices.
-- **Time‑Sovereignty mapping:** Visualises the transition between particle‑time and camera‑time dominance (\(S_p\) vs \(S_c\) as functions of temperature).
+* **Exact Lindblad Dynamics:** Solves the master equation via Liouvillian superoperator exponentiation with machine-level precision (error < 1e-15).
+* **Time-Sovereignty Mapping:** A unique visual tool to track the transition between particle-time and camera-time dominance.
+* **Comprehensive Metrics:** Real-time calculation of Visibility ($V$), Distinguishability ($D$), Concurrence ($C$), and von Neumann Entropy ($S$).
+* **Inverse Calibration Engine:** Automatically computes physical parameters ($\gamma_{\phi 0}$, $T$, or $\theta$) required to reach specific experimental visibility targets.
+* **Interactive GUI:** A high-performance dashboard using `ipywidgets`, optimized for both Desktop and Mobile research.
 
-## 🔬 Scientific foundation and symmetry
+## 🔬 Scientific Analysis: The Symmetry Point
 
-The model strictly obeys Bohr’s complementarity principle:
+A core focus of DTQEM v12.2 is the analysis of wave-particle duality at the geometric orientation of **$\theta = 90^\circ$**:
 
-\[
-V^{2} + D^{2} \le 1.
-\]
+* **Numerical Convergence:** At this specific configuration, the model explores the maximum balance between path information and interference patterns.
+* **Physical Integrity:** The simulator does not enforce arbitrary equality between $V$ and $D$. Instead, it demonstrates how they naturally converge toward each other under ideal conditions while strictly obeying the fundamental complementarity bound: $V^2 + D^2 \le 1$.
+* **Thermal Robustness:** The simulation shows that as environmental noise (relaxation) increases, the system reflects realistic quantum drift, moving away from ideal symmetry in full accordance with open quantum system dynamics.
 
-For the special orientation \(\theta = 90^\circ\) and under fine‑tuned conditions (pure dephasing, zero magnetic field, \(t_{\text{obs}}\) chosen so that \(\alpha K_{\text{eff}} = 0.5\)), the values of \(V\) and \(D\) can become **numerically close** to each other and to \(1/\sqrt{2}\). However, **exact equality is not enforced** by the Lindblad dynamics. The model does **not** claim a universal prediction of \(V = D\); the occasional near‑equality is an interesting numerical feature, not a theoretical postulate.
+## 🛠 Numerical Stability & Diagnostics
 
-## ⚙️ Numerical stability and diagnostics
+The engine includes a robust diagnostic suite to ensure that the "Time Sovereignty" of the simulation remains physically grounded:
 
-The simulator includes built‑in diagnostic tools that guarantee:
+1.  **Dynamical Compensation:** Adjusts effective time parameters ($t_{eff}$) to accurately reflect the impact of thermal occupancy ($n_{th}$) and dephasing ($\gamma_\phi$).
+2.  **Machine-Level Benchmarking:**
+    * **Dephasing Stability:** Verified at $< 8.33 \times 10^{-16}$ precision.
+    * **Relaxation Accuracy:** Verified at $< 7.77 \times 10^{-16}$ precision.
+3.  **Entropy Validation:** Strictly enforces the Second Law of Thermodynamics regarding entropy growth during decoherence.
 
-- Trace preservation (\(\operatorname{Tr}\rho = 1\))
-- Hermiticity and positivity of the density matrix
-- Complementarity \((V^{2}+D^{2}\le 1)\) automatically enforced
-
-### Benchmarks
-
-| Test Category | Status | Precision |
-| :--- | :---: | :--- |
-| **Pure dephasing (Bell state)** | ✅ Passed | \(< 8.33\times10^{-16}\) |
-| **Relaxation at \(T=0\)** | ✅ Passed | \(< 7.77\times10^{-16}\) |
-| **Entropy increase (second law)** | ✅ Passed | True |
-| **Complementarity** | ✅ Always satisfied | \(V^{2}+D^{2}\le 1\) |
-
-## 🛠 Installation & Quick Start
+## 📦 Installation & Quick Start
 
 ```bash
-git clone https://github.com/reddoma742/DTQEM-v12.2.git
-cd DTQEM-v12.2
+# Clone the repository
+git clone [https://github.com/reddoma742/DTQEM-v12.2-Time-Sovereignty-Model-of-Quantum-Entanglement.git](https://github.com/reddoma742/DTQEM-v12.2-Time-Sovereignty-Model-of-Quantum-Entanglement.git)
+
+# Enter the directory
+cd DTQEM-v12.2-Time-Sovereignty-Model-of-Quantum-Entanglement
+
+# Install dependencies
 pip install -r requirements.txt
+
+# Launch the simulator
 python dtqem_v12_2.py
