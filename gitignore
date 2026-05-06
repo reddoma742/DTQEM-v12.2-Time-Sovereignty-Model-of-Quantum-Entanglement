@@ -17,3 +17,5 @@ dtqem_outputs_*/
 # IDE
 .vscode/
 .idea/
+# Logs
+*.log
