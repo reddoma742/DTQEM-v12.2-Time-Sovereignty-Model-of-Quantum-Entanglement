@@ -1,22 +1,18 @@
 # White Paper – DTQEM v12.2: Time‑Sovereignty Model of Quantum Entanglement
 
 **Version:** 1.0  
-# DTQEM v12.2: Time-Sovereignty Model of Quantum Entanglement
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20043754.svg)](https://doi.org/10.5281/zenodo.20043754)
-**Official DOI:** [10.5281/zenodo.20043754](https://doi.org/10.5281/zenodo.20043754)
-
+**DOI:** [10.5281/zenodo.20043754](https://doi.org/10.5281/zenodo.20043754)  
 **Authors:** Redouane Berramdane (concept, supervision), DeepSeek (numerics, code), Gemini & Claude (critical review)  
 
 ---
 
 ## Abstract
 
-DTQEM v12.2 (Dual‑Time Quantum Entanglement Model) is an open‑source, numerically exact simulation of two‑qubit entanglement under realistic thermal decoherence and magnetic fields. The Lindblad master equation is solved via Liouvillian superoperator exponentiation, achieving machine‑precision benchmarks (dephasing error < 1e‑12, relaxation error < 1e‑12, entropy increase verified).  
+DTQEM v12.2 (Dual‑Time Quantum Entanglement Model) is an open‑source, numerically exact simulation of two‑qubit entanglement under realistic thermal decoherence and magnetic fields. The Lindblad master equation is solved via Liouvillian superoperator exponentiation, achieving machine‑precision benchmarks (dephasing error < 1e‑12, relaxation error < 1e‑12, entropy increase verified).  
 
 We introduce the **Time‑Sovereignty** interpretive layer: the particle’s classical flight time and an effective camera time compete, and the dominant clock determines whether interference (entanglement) occurs or collapses. This picture provides an intuitive, deterministic account of the quantum eraser and the observer effect.  
 
-Unique testable predictions are made: at launch angle θ = 90°, visibility equals distinguishability for any temperature, and at the sovereignty transition point \( \alpha K_{\text{eff}} = 0.5 \) we numerically find \( V = D \approx 1/\sqrt{2} \). The code is fully documented, interactive (ipywidgets), and ready for research and education.
+Unique testable predictions are made: at launch angle θ = 90°, visibility equals distinguishability for any temperature, and at the sovereignty transition point \( \alpha K_{\text{eff}} = 0.5 \) we numerically find \( V = D \approx 1/\sqrt{2} \). The code is fully documented, interactive (ipywidgets), and ready for research and education.
 
 ---
 
@@ -141,6 +137,17 @@ Built with `ipywidgets`, the interface provides:
 
 DTQEM v12.2 is a **numerically exact, open‑source** simulation of two‑qubit entanglement that combines rigorous Lindblad dynamics with an intuitive **Time‑Sovereignty** interpretation. It passes all physical benchmarks, makes a unique testable prediction, and comes with a complete GUI. The model is ready for use in education, research, and as a foundation for extensions (non‑Markovian noise, gravity, multi‑qubits).
 
+---
+
+## 8. References
+
+1. Lindblad, G. (1976). *Commun. Math. Phys.* **48**, 119.  
+2. Breuer, H.‑P. & Petruccione, F. (2002). *The Theory of Open Quantum Systems*.  
+3. Gisin, N. & Zbinden, H. (1998). *Phys. Lett. A* **248**, 1.  
+4. Aspect, A. et al. (1982). *Phys. Rev. Lett.* **49**, 1804.
+
+---
+
 ## 9. Open Issues and Future Work
 
 While DTQEM v12.2 successfully passes all numerical benchmarks and offers a robust simulation platform, two theoretical aspects remain open and require further investigation. We state them here transparently to guide future development.
@@ -171,18 +178,3 @@ The model predicts that for `θ = 90°` and arbitrary temperature, visibility `V
 ---
 
 **Despite these open points, DTQEM v12.2 remains a fully functional, numerically exact simulator of two‑qubit entanglement. The code, documentation, and DOI are ready for use in education and research.**
-
----
-
-## 8. References
-
-1. Lindblad, G. (1976). *Commun. Math. Phys.* **48**, 119.  
-2. Breuer, H.‑P. & Petruccione, F. (2002). *The Theory of Open Quantum Systems*.  
-3. Gisin, N. & Zbinden, H. (1998). *Phys. Lett. A* **248**, 1.  
-4. Aspect, A. et al. (1982). *Phys. Rev. Lett.* **49**, 1804.
-
----
-
-**Finally:** The code and full documentation are at  
-[https://github.com/reddoma742/DTQEM-v12.2](https://github.com/reddoma742/DTQEM-v12.2)  
-DOI: [10.5281/zenodo.20039345](https://doi.org/10.5281/zenodo.20039345)
