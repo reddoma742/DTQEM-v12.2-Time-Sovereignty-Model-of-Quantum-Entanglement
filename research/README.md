@@ -1,6 +1,5 @@
-markdown
-![Berramdane Model Result](research/images/h2_photoionization_inspired.jpg)
 
+![Berramdane Model Result](images/h2_photoionization_inspired.jpg)
 
 # DTQEM v12.2 – Time‑Sovereignty Model of Quantum Entanglement
 
