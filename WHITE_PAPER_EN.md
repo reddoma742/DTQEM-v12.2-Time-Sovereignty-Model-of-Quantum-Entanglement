@@ -1,6 +1,6 @@
 # White Paper – DTQEM v12.2: Time‑Sovereignty Model of Quantum Entanglement
 
-**Version:** 1.0  
+**Version:** 1.1 (Documentation corrected)  
 **DOI:** [10.5281/zenodo.20043754](https://doi.org/10.5281/zenodo.20043754)  
 **Authors:** Redouane Berramdane (concept, supervision), DeepSeek (numerics, code), Gemini & Claude (critical review)  
 
@@ -12,7 +12,7 @@ DTQEM v12.2 (Dual‑Time Quantum Entanglement Model) is an open‑source, numeri
 
 We introduce the **Time‑Sovereignty** interpretive layer: the particle’s classical flight time and an effective camera time compete, and the dominant clock determines whether interference (entanglement) occurs or collapses. This picture provides an intuitive, deterministic account of the quantum eraser and the observer effect.  
 
-Unique testable predictions are made: at launch angle θ = 90°, visibility equals distinguishability for any temperature, and at the sovereignty transition point \( \alpha K_{\text{eff}} = 0.5 \) we numerically find \( V = D \approx 1/\sqrt{2} \). The code is fully documented, interactive (ipywidgets), and ready for research and education.
+The model respects complementarity \(V^2 + D^2 \le 1\) and does **not** claim a universal prediction of \(V = D\). Under fine‑tuned parameters one may observe approximate equality, but this is a numerical curiosity, not a theoretical postulate. The code is fully documented, interactive (ipywidgets), and ready for research and education.
 
 ---
 
@@ -114,9 +114,37 @@ Automatically run at start:
 
 ---
 
-## 5. Unique Testable Prediction
+## 5. Approximate Symmetry and the Limits of Wave‑Particle Balance
 
-For \(\theta = 90^\circ\) (\(\alpha = 1/\sqrt{2}\)), the model predicts **visibility equals distinguishability** for any temperature. Numerically, at the sovereignty transition point \(\alpha K_{\text{eff}} = 0.5\) we obtain \(V = D \approx 1/\sqrt{2}\). This is a clear, experimentally verifiable signature of the Time‑Sovereignty framework.
+The model does **not** produce a universal prediction of \(V = D\). To avoid any misinterpretation, we state clearly what DTQEM actually does.
+
+### 5.1 The special angle \(\theta = 90^\circ\)
+
+For \(\theta = 90^\circ\) we have \(\alpha = \sin(45^\circ)=1/\sqrt{2}\).  
+The effective time becomes \(t_{\text{eff}} = t_{\text{real}}(1 - \frac{1}{\sqrt{2}} K_{\text{eff}})\).
+
+When the calibration satisfies \(\alpha K_{\text{eff}} = 0.5\) (i.e. \(K_{\text{eff}} = 1/\sqrt{2}\)), the values of visibility \(V\) and distinguishability \(D\) computed from the density matrix **can become numerically close** to each other and close to \(1/\sqrt{2}\) for some parameter choices, **but they are never exactly equal** in the general Lindblad model.
+
+### 5.2 Why exact equality is not achieved
+
+- **Pure dephasing only (\(\gamma_{\text{rel}0}=0\)):**  
+  For the initial Bell state, the reduced density matrix is maximally mixed, hence \(D = 0\) while \(V = e^{-\gamma_{\phi}t}\). Thus \(V = D\) only in the trivial case \(V = D = 0\).
+
+- **With relaxation (\(\gamma_{\text{rel}0}>0\)):**  
+  The Lindblad dynamics does not preserve the symmetry required for \(V = D\). Numerical searches show that \(V\) and \(D\) can approach each other within a few percent, but never reach exact equality.
+
+### 5.3 What the model actually guarantees
+
+The only rigorous relation is the complementarity bound:
+
+\[
+V^{2} + D^{2} \le 1
+\]
+
+and, for a pure Bell state and pure dephasing, \(V^{2} + D^{2} = 1\).  
+The occasional near‑equality \(V \approx D\) is a **numerical curiosity** observable under fine‑tuned parameters (e.g., \(\theta = 90^\circ\), \(\alpha K_{\text{eff}} = 0.5\), small but non‑zero relaxation, and zero magnetic field). It is **not** a theoretical prediction of the model.
+
+**Therefore, we retract any earlier claim that DTQEM predicts \(V = D = 1/\sqrt{2}\).** The model remains a precise simulator of open‑quantum dynamics, but it does not enforce wave‑particle equality.
 
 ---
 
@@ -135,7 +163,7 @@ Built with `ipywidgets`, the interface provides:
 
 ## 7. Conclusion
 
-DTQEM v12.2 is a **numerically exact, open‑source** simulation of two‑qubit entanglement that combines rigorous Lindblad dynamics with an intuitive **Time‑Sovereignty** interpretation. It passes all physical benchmarks, makes a unique testable prediction, and comes with a complete GUI. The model is ready for use in education, research, and as a foundation for extensions (non‑Markovian noise, gravity, multi‑qubits).
+DTQEM v12.2 is a **numerically exact, open‑source** simulation of two‑qubit entanglement that combines rigorous Lindblad dynamics with an intuitive **Time‑Sovereignty** interpretation. It passes all physical benchmarks and respects complementarity. The claim of a universal prediction \(V = D = 1/\sqrt{2}\) has been retracted; the model only guarantees \(V^2 + D^2 \le 1\). Under fine‑tuned conditions one may observe approximate equality, but this is a numerical feature, not a theoretical postulate. The code, documentation, and DOI are ready for use in education and research.
 
 ---
 
@@ -150,31 +178,24 @@ DTQEM v12.2 is a **numerically exact, open‑source** simulation of two‑qubit 
 
 ## 9. Open Issues and Future Work
 
-While DTQEM v12.2 successfully passes all numerical benchmarks and offers a robust simulation platform, two theoretical aspects remain open and require further investigation. We state them here transparently to guide future development.
+### 9.1 The (non‑)prediction \(V = D = 1/\sqrt{2}\)
 
-### 9.1 Time‑Sovereignty Interpretation – The Definition of `t_cam`
+Earlier versions of this white paper suggested that DTQEM predicts \(V = D = 1/\sqrt{2}\) at \(\theta = 90^\circ\) and \(\alpha K_{\text{eff}} = 0.5\). **Systematic numerical searches and analytical reasoning have shown that this exact equality does not hold in the Lindblad model.**  
 
-In the current interpretive layer (Section 3), we defined an effective camera time `t_cam = α K_eff t_real` so that `t_eff = t_real - t_cam`. However, for the standard calibration (`γφ₀ = 1000`, `γrel₀ = 300`, `t_obs = 1 μs`), the product `α K_eff` always remains below 0.5 for all temperatures. Consequently the particle sovereignty `S_p = α K_eff` never exceeds the camera sovereignty `S_c = 0.5`, and the particle is always predicted to dominate. This makes the “transition” unobservable under those parameters.
+The model only guarantees \(V^{2}+D^{2}\le 1\). Approximate equality can be observed under fine‑tuned parameters (small relaxation, zero magnetic field, specific \(t_{\text{obs}}\)), but it is not a theoretical prediction. We have therefore corrected the text accordingly. This does not affect the numerical accuracy or the usability of DTQEM.
 
-**What is needed:** A physically motivated redefinition of `t_cam` that does not simply rescale the existing expression. One promising direction is to link `t_cam` directly to the **synchronisation rate** `R_sync = 1 - K_eff` using a non‑linear (e.g., logistic) saturation function, so that a true transition occurs when `K_eff` drops below a threshold. This will be a central goal of **DTQEM v13**.
+### 9.2 Time‑Sovereignty interpretation – need for a better \(t_{\text{cam}}\)
 
-### 9.2 Unique Prediction `V = D` at θ = 90°
-
-The model predicts that for `θ = 90°` and arbitrary temperature, visibility `V` should equal distinguishability `D`. While this holds perfectly when only pure dephasing is present (`γrel₀ = 0`), numerical tests with the full Lindblad dynamics (dephasing + relaxation + excitation) show small deviations, especially at higher temperatures and with the magnetic field switched on.
-
-**Possible reasons:**  
-- The symmetry that leads to `V = D` is broken by the `γ↓` and `γ↑` jump operators.  
-- The prediction may require a specific additional condition (e.g., `γrel₀ = 0` or zero magnetic field).  
-
-**Future work:** A rigorous analytical derivation of the condition for `V = D` will be performed, and the numerical range where the equality holds will be mapped. This will be documented in version v13.
+The current definition \(t_{\text{cam}} = \alpha K_{\text{eff}} t_{\text{real}}\) is a simple rescaling and does not produce a genuine transition between particle and camera dominance. A future version (v13) will explore a physically motivated redefinition, possibly based on the synchronisation rate \(R_{\text{sync}} = 1 - K_{\text{eff}}\) with a non‑linear saturation function.
 
 ### 9.3 Planned extensions for v13
 
-- Redefinition of `t_cam` to produce a genuine time‑sovereignty transition.
-- Derivation and numerical verification of the exact condition for `V = D`.
-- Implementation of non‑Markovian noise (Ornstein‑Uhlenbeck process) as an optional extension.
-- Optional support for three‑qubit systems (basic W and GHZ states) as a prototype for multi‑partite entanglement.
+- Redefinition of \(t_{\text{cam}}\) to obtain a true time‑sovereignty transition.
+- Inclusion of non‑Markovian noise (Ornstein‑Uhlenbeck process).
+- Optional support for three‑qubit systems (W and GHZ states).
 
 ---
 
-**Despite these open points, DTQEM v12.2 remains a fully functional, numerically exact simulator of two‑qubit entanglement. The code, documentation, and DOI are ready for use in education and research.**
+**Finally:** The code and full documentation are at  
+[https://github.com/reddoma742/DTQEM-v12.2](https://github.com/reddoma742/DTQEM-v12.2)  
+DOI: [10.5281/zenodo.20043754](https://doi.org/10.5281/zenodo.20043754)
