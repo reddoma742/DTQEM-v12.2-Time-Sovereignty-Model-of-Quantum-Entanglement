@@ -22,6 +22,16 @@ The model introduces the **Time‑Sovereignty** interpretation: entanglement rep
 * **Inverse Calibration Engine:** Automatically computes physical parameters ($\gamma_{\phi 0}$, $T$, or $\theta$) required to reach specific experimental visibility targets.
 * **Interactive GUI:** A high-performance dashboard using `ipywidgets`, optimized for both Desktop and Mobile research.
 
+## Analytical balance condition V = D
+
+For pure dephasing (`γrel₀=0, T=0, B=0`), the model satisfies the exact relation:
+
+\[
+\gamma_{\phi0}\,t_{\text{obs}} = 2\ln(\tan\theta), \qquad \theta > 45^\circ.
+\]
+
+This shows that the product `γφ₀·t_obs` is the fundamental control parameter, not `γφ₀` alone. The condition is derived directly from the Lindblad equation and has been verified numerically with machine precision. For details, see the white paper.
+
 ## 🔬 Scientific Analysis: The Symmetry Point
 
 A core focus of DTQEM v12.2 is the analysis of wave-particle duality at the geometric orientation of **$\theta = 90^\circ$**:
