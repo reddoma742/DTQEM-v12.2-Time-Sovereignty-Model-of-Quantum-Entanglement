@@ -19,7 +19,7 @@
             "type": "Other"
         }
     ],
-    "description": "<p>DTQEM v12.2 is an open‑source, numerically exact simulation of two‑qubit entanglement under thermal decoherence and magnetic fields. It solves the Lindblad master equation via Liouvillian exponentiation, offers all standard entanglement metrics, inverse calibration, and a unique testable prediction (V = D at θ = 90°). The Time‑Sovereignty interpretation provides an intuitive picture of the observer effect.</p>",
+    "description": "<p>DTQEM v12.2 is an open‑source, numerically exact simulation of two‑qubit entanglement under thermal decoherence and magnetic fields. It solves the Lindblad master equation via Liouvillian exponentiation, offers all standard entanglement metrics, inverse calibration, and an exact analytical condition for wave‑particle balance: γφ₀ t_obs = 2 ln(tan θ) (for pure dephasing, θ > 45°). The Time‑Sovereignty interpretation provides an intuitive picture of the observer effect.</p>",
     "license": "MIT",
     "keywords": [
         "quantum entanglement",
@@ -34,3 +34,4 @@
     "communities": [
         {"identifier": "quant-ph"}
     ]
+}
