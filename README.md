@@ -2,7 +2,7 @@
 
 **DOI:** [10.5281/zenodo.20043754](https://doi.org/10.5281/zenodo.20043754)  
 **License:** MIT  
-**Author:** Redouane Berramdane (with assistance from DeepSeek, Gemini, Claude)
+**Author:** Reddouane Berramdane (with assistance from DeepSeek, Gemini, Claude)
 
 ![Berramdane Model Result](images/DTQEM_v12.2.jpg)
 
