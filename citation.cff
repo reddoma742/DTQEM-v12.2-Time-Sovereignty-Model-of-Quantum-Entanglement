@@ -6,7 +6,7 @@
 ```yaml
 cff-version: 1.2.0
 message: "If you use DTQEM in your research, please cite it as:"
-title: "DTQEM v12.2: Time‑Sovereignty Model of Quantum Entanglement"
+title: "title: "DTQEM v12.2: Time‑Sovereignty Model of Quantum Entanglement""
 authors:
   - family-names: "Berramdane"
     given-names: "Redouane"
