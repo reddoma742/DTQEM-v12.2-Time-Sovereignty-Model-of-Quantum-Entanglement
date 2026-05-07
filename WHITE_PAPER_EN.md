@@ -88,6 +88,14 @@ Solving for the product yields the exact analytical condition:
 
 ---
 
+## 5.1 Operational meaning of D: distinguishability vs. path probability
+
+In the DTQEM framework, the quantity `D = |ρ_A₀₀ − ρ_A₁₁|` quantifies the **maximum distinguishability** between the two possible paths (slits) based on the reduced state of the first qubit. It represents the upper bound on how well one could discriminate the two paths in an optimal measurement. It does **not** directly give the classical probability that the particle took a particular slit.
+
+In a symmetric double‑slit setup with no prior bias, the optimal success probability for a path‑discrimination task is `(1+D)/2`. However, this value should be interpreted as the **operational predictability** under the model’s assumptions, not as an ontological statement about the particle’s pre‑measurement path. Reading `D` as a genuine path probability would risk slipping into a hidden‑variable interpretation, which is not intended by DTQEM. Instead, `D` is a measure of how much which‑path information is available in principle, given the environmental conditions and the chosen parameters (`θ`, `γφ₀`, `t_obs`, `T`, etc.).
+
+---
+
 ## 6. The Inverse Calibration Engine
 
 The simulator includes an automated engine that determines the physical parameters required to meet a target visibility. Given experimental data (`θ`, `V_target`), the engine returns the corresponding `γφ₀`, `T`, or `θ`. This allows reverse‑engineering of environmental conditions (temperature, dephasing, or orientation) from observed quantum states.
